@@ -1,5 +1,9 @@
 public class ConnectFourGame {
 
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_WHITE = "\u001B[37m";
     private final CellValue[] board;
     private GameState gameState;
     private int level;
@@ -36,7 +40,7 @@ public class ConnectFourGame {
 
     private void updateGameState(int m) {
 
-        if (level == 42) {
+        if (level == 41) {
             gameState = GameState.DRAW;
             return;
         }
@@ -82,7 +86,6 @@ public class ConnectFourGame {
 
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append("1 2 3 4 5 6 7");
         for (int i = 0; i < 42; i++) {
             if (i % 7 == 0) {
                 res.append("\n");
@@ -90,11 +93,11 @@ public class ConnectFourGame {
                 res.append("|");
             }
             if (board[i] == CellValue.RED) {
-                res.append("X");
+                res.append(ANSI_RED + "\uD83D\uDD34" + ANSI_RESET);
             } else if (board[i] == CellValue.YELLOW) {
-                res.append("O");
+                res.append(ANSI_YELLOW + "\uD83D\uDD34" + ANSI_RESET);
             } else {
-                res.append(" ");
+                res.append(ANSI_WHITE + "\uD83D\uDD34" + ANSI_RESET);
             }
         }
         return res.toString();
