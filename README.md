@@ -1,3 +1,3 @@
 # ConnectFour
 
-Connect Four game made using Java. Incomplete
+Connect Four game made using Java.
