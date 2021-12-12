@@ -1,6 +1,6 @@
 # ConnectFour
 
-Connect Four game made using Java.
+Connect Four game
 
 <img src="Screenshot (23).png" width="40%">
 
